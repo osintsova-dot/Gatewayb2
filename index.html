@@ -163,7 +163,7 @@ input:focus, textarea:focus, select:focus { border-color: #6C3FC5; }
     </div>
   </div>
   <div class="field"><span class="lbl">Результат теста</span>
-    <div class="trow"><input type="number" id="ts" placeholder="54" min="0" oninput="updPct()"><span class="slash">/</span><input type="number" id="tt" placeholder="60" min="0" oninput="updPct()"></div>
+    <div class="trow"><input type="number" id="ts" placeholder="78" min="0" oninput="updPct()"><span class="slash">/</span><input type="number" id="tt" placeholder="100" min="0" oninput="updPct()"></div>
     <div class="fhint">набрано / максимум</div><div class="pctprev" id="pctprev"></div>
   </div>
   <div class="field"><span class="lbl">Заметка (необязательно)</span><textarea id="note" placeholder="Дополнительная информация для родителей..."></textarea></div>
@@ -196,7 +196,7 @@ input:focus, textarea:focus, select:focus { border-color: #6C3FC5; }
     </div>
     <div>
       <div class="field"><label class="lbl" for="gTeacher">Педагог</label><input type="text" id="gTeacher" placeholder="Имя педагога"></div>
-      <div class="field"><label class="lbl" for="gTestTotal">Максимум теста</label><input type="number" id="gTestTotal" placeholder="60" min="0" style="width:80px"></div>
+      <div class="field"><label class="lbl" for="gTestTotal">Максимум теста</label><input type="number" id="gTestTotal" placeholder="100" min="0" style="width:80px"></div>
     </div>
   </div>
 </div>
@@ -229,17 +229,18 @@ input:focus, textarea:focus, select:focus { border-color: #6C3FC5; }
 // ════════════════════════════════════════
 var UNITS = [
   {n:'In', label:'Вводные', t:'Welcome back — знакомство, контракт, диагностика', m:'Сентябрь', L:3, v:'повторение ключевой лексики B1 (учёба, работа, путешествия, технологии)', g:'диагностика: времена, conditionals, passive, reported speech'},
-  {n:'1',  label:'Unit 1',  t:'Make the grade', m:'Сентябрь', L:5, v:'школьная и студенческая жизнь, высшее образование, do и make', g:'настоящие времена (включая Present Perfect Continuous) + герундий и инфинитив (1)'},
-  {n:'2',  label:'Unit 2',  t:'A job well done', m:'Сентябрь–Октябрь', L:6, v:'условия работы, рабочая жизнь и оплата, фразовые глаголы о работе', g:'прошедшие времена, used to / would + Past Perfect Simple и Continuous'},
-  {n:'3',  label:'Unit 3',  t:'Departure time', m:'Октябрь', L:5, v:'транспорт и путешествия, приставки', g:'future forms + Future Continuous, Future Perfect'},
-  {n:'4',  label:'Unit 4',  t:'Our strengths', m:'Ноябрь', L:6, v:'прилагательные характера, идиомы о личности, суффиксы существительных', g:'все способы сравнения + артикли, способность (can / could / be able to)'},
-  {n:'5',  label:'Unit 5',  t:'Financial advice', m:'Ноябрь–Декабрь', L:8, v:'деньги: траты и накопления, идиомы, фразовые глаголы', g:'модальные: обязательство и совет + speculation и deduction (must have done)'},
-  {n:'6',  label:'Unit 6',  t:'Get fit, stay fit!', m:'Январь–Февраль', L:7, v:'тело, здоровье и медицина, идиомы о здоровье', g:'условные Zero / First / Second + Third Conditional, I wish / If only'},
-  {n:'7',  label:'Unit 7',  t:'Rave reviews', m:'Февраль', L:6, v:'кино, литература и музыка, прилагательные для рецензий, составные существительные', g:'reported speech + другие глаголы передачи речи'},
-  {n:'8',  label:'Unit 8',  t:'To the rescue!', m:'Февраль–Март', L:7, v:'природные катастрофы и экстремальная погода, предложные глаголы', g:'the Passive во всех формах + пассив с say / know / believe'},
-  {n:'9',  label:'Unit 9',  t:'Tech talk', m:'Март–Апрель', L:6, v:'технологии и IT, фразовые глаголы о технологиях', g:'relative clauses + герундий и инфинитив (2)'},
-  {n:'10', label:'Unit 10', t:'News just in!', m:'Апрель–Май', L:9, v:'новости, заголовки и коллокации', g:'future in the past, mixed conditionals + question tags, косвенные вопросы'},
-  {n:'F',  label:'Финал',   t:'Пробник в формате ЕГЭ + разбор + финальный тест', m:'Май', L:4, v:'ключевая лексика года', g:'весь грамматический объём года'},
+  {n:'1',  label:'Unit 1',  t:'Make the grade', m:'Сентябрь–Октябрь', L:7, v:'школьная и студенческая жизнь, высшее образование, do и make', g:'настоящие времена (включая Present Perfect Continuous) + герундий и инфинитив (1)'},
+  {n:'2',  label:'Unit 2',  t:'A job well done', m:'Октябрь', L:7, v:'условия работы, рабочая жизнь и оплата, фразовые глаголы о работе', g:'прошедшие времена, used to / would + Past Perfect Simple и Continuous'},
+  {n:'3',  label:'Unit 3',  t:'Departure time', m:'Ноябрь', L:7, v:'транспорт и путешествия, приставки', g:'future forms + Future Continuous, Future Perfect'},
+  {n:'4',  label:'Unit 4',  t:'Our strengths', m:'Ноябрь–Декабрь', L:7, v:'прилагательные характера, идиомы о личности, суффиксы существительных', g:'все способы сравнения + артикли, способность (can / could / be able to)'},
+  {n:'5',  label:'Unit 5',  t:'Financial advice', m:'Декабрь–Январь', L:7, v:'деньги: траты и накопления, идиомы, фразовые глаголы', g:'модальные: обязательство и совет + speculation и deduction (must have done)'},
+  {n:'H',  label:'Полугодие', t:'Резерв и полугодовой тест по юнитам 1–5', m:'Январь–Февраль', L:2, v:'ключевая лексика юнитов 1–5', g:'грамматика юнитов 1–5: времена, future forms, сравнения, модальные'},
+  {n:'6',  label:'Unit 6',  t:'Get fit, stay fit!', m:'Февраль', L:6, v:'тело, здоровье и медицина, идиомы о здоровье', g:'условные Zero / First / Second + Third Conditional, I wish / If only'},
+  {n:'7',  label:'Unit 7',  t:'Rave reviews', m:'Февраль–Март', L:6, v:'кино, литература и музыка, прилагательные для рецензий, составные существительные', g:'reported speech + другие глаголы передачи речи'},
+  {n:'8',  label:'Unit 8',  t:'To the rescue!', m:'Март–Апрель', L:6, v:'природные катастрофы и экстремальная погода, предложные глаголы', g:'the Passive во всех формах + пассив с say / know / believe'},
+  {n:'9',  label:'Unit 9',  t:'Tech talk', m:'Апрель', L:6, v:'технологии и IT, фразовые глаголы о технологиях', g:'relative clauses + герундий и инфинитив (2)'},
+  {n:'10', label:'Unit 10', t:'News just in!', m:'Апрель–Май', L:6, v:'новости, заголовки и коллокации', g:'future in the past, mixed conditionals + question tags, косвенные вопросы'},
+  {n:'F',  label:'Финал',   t:'Резерв и годовой тест B2 End of Year Test', m:'Май', L:2, v:'ключевая лексика года', g:'весь грамматический объём года'},
 ];
 
 var SL = {1:'не усвоено',2:'слабо, нужна дополнительная работа',3:'справляется с поддержкой',4:'уверенно',5:'отлично, без подсказок'};
@@ -424,7 +425,7 @@ function buildPupilRows(){
         '<div class="pupil-field"><label>Активность</label><div class="mini-scores">'+msc(i,'a')+'</div></div>'+
         '<div class="pupil-field"><label id="p'+i+'_attlab">Посещ. / 3</label><input type="number" id="p'+i+'_att" placeholder="3" min="0" max="3"></div>'+
         '<div class="pupil-field"><label>ДЗ %</label><input type="number" id="p'+i+'_hw" placeholder="85" min="0" max="100"></div>'+
-        '<div class="pupil-field"><label>Тест (набрано)</label><input type="number" id="p'+i+'_ts" placeholder="54" min="0"></div>'+
+        '<div class="pupil-field"><label>Тест (набрано)</label><input type="number" id="p'+i+'_ts" placeholder="78" min="0"></div>'+
         '<div class="pupil-field"><label>Пропуски</label><div class="mini-opts">'+
           '<button class="mob" onclick="mOpt('+i+',\'o\',\'none\',this)">Нет</button>'+
           '<button class="mob" onclick="mOpt('+i+',\'o\',\'all\',this)">Все ✓</button>'+
@@ -584,7 +585,7 @@ function loadPupils(){
     var div=document.createElement('div');
     div.className='pupil-card';
     var badges='';
-    for(var u=0;u<12;u++){
+    for(var u=0;u<UNITS.length;u++){
       var hasData=units.indexOf(u)!==-1;
       var cls='unit-badge'+(hasData?' has-data':'');
       if(hasData) badges+='<span class="'+cls+'" onclick="showUnitData(\''+name.replace(/'/g,"\\'")+'\',' +u+')">'+UNITS[u].label+'</span>';
@@ -617,7 +618,7 @@ function showUnitData(name,unitIdx){
 
 function deletePupil(name){
   if(!confirm('Удалить все данные по ученику «'+name+'»?')) return;
-  for(var u=0;u<12;u++) localStorage.removeItem(makeKey(currentTeacher,name,u));
+  for(var u=0;u<UNITS.length;u++) localStorage.removeItem(makeKey(currentTeacher,name,u));
   var idxKey='ssgw_idx_'+currentTeacher;
   var idx=JSON.parse(localStorage.getItem(idxKey)||'[]');
   idx=idx.filter(function(e){return e.split('||')[0]!==name;});
@@ -644,7 +645,7 @@ function showYearReport(name){
   var testPcts=[],vArr=[],gArr=[],aArr=[];
   var completedUnits=0, totalMax=0;
 
-  for(var u=0;u<12;u++){
+  for(var u=0;u<UNITS.length;u++){
     var key=makeKey(currentTeacher,name,u);
     var d=JSON.parse(localStorage.getItem(key)||'null');
     var un=UNITS[u];
@@ -703,7 +704,7 @@ function showYearReport(name){
     '<p>Дорогие родители!</p><br>'+
     '<p>Представляем итоговый отчёт за учебный год по курсу <strong>Gateway to the World B2 (Macmillan)</strong>.</p>'+
     '<p>👤 <strong>Ученик:</strong> '+name+'</p><br>'+
-    '<p>За год пройдено <strong>'+completedUnits+' из 12</strong> разделов (вводные уроки + 10 блоков + финал года · 72 урока в программе).</p>'+
+    '<p>За год пройдено <strong>'+completedUnits+' из '+UNITS.length+'</strong> разделов (вводные уроки + 10 юнитов + полугодие + финал года · 72 урока в программе).</p>'+
     '<p>В целом: '+summaryParts.join('; ')+'.</p><br>'+
     '<p>📊 <strong>Средние показатели за год:</strong><br>'+
     'Лексика: '+avgV+'/5 '+trend(vArr)+
