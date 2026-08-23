@@ -229,17 +229,17 @@ input:focus, textarea:focus, select:focus { border-color: #6C3FC5; }
 // ════════════════════════════════════════
 var UNITS = [
   {n:'In', label:'Вводные', t:'Welcome back — знакомство, контракт, диагностика', m:'Сентябрь', L:3, v:'повторение ключевой лексики B1 (учёба, работа, путешествия, технологии)', g:'диагностика: времена, conditionals, passive, reported speech'},
-  {n:'1',  label:'Unit 1',  t:'Make the grade', m:'Сентябрь–Октябрь', L:7, v:'школьная и студенческая жизнь, высшее образование, do и make', g:'настоящие времена (включая Present Perfect Continuous) + герундий и инфинитив (1)'},
-  {n:'2',  label:'Unit 2',  t:'A job well done', m:'Октябрь', L:7, v:'условия работы, рабочая жизнь и оплата, фразовые глаголы о работе', g:'прошедшие времена, used to / would + Past Perfect Simple и Continuous'},
-  {n:'3',  label:'Unit 3',  t:'Departure time', m:'Ноябрь', L:7, v:'транспорт и путешествия, приставки', g:'future forms + Future Continuous, Future Perfect'},
-  {n:'4',  label:'Unit 4',  t:'Our strengths', m:'Ноябрь–Декабрь', L:7, v:'прилагательные характера, идиомы о личности, суффиксы существительных', g:'все способы сравнения + артикли, способность (can / could / be able to)'},
-  {n:'5',  label:'Unit 5',  t:'Financial advice', m:'Декабрь–Январь', L:7, v:'деньги: траты и накопления, идиомы, фразовые глаголы', g:'модальные: обязательство и совет + speculation и deduction (must have done)'},
-  {n:'H',  label:'Полугодие', t:'Резерв и полугодовой тест по юнитам 1–5', m:'Январь–Февраль', L:2, v:'ключевая лексика юнитов 1–5', g:'грамматика юнитов 1–5: времена, future forms, сравнения, модальные'},
-  {n:'6',  label:'Unit 6',  t:'Get fit, stay fit!', m:'Февраль', L:6, v:'тело, здоровье и медицина, идиомы о здоровье', g:'условные Zero / First / Second + Third Conditional, I wish / If only'},
-  {n:'7',  label:'Unit 7',  t:'Rave reviews', m:'Февраль–Март', L:6, v:'кино, литература и музыка, прилагательные для рецензий, составные существительные', g:'reported speech + другие глаголы передачи речи'},
-  {n:'8',  label:'Unit 8',  t:'To the rescue!', m:'Март–Апрель', L:6, v:'природные катастрофы и экстремальная погода, предложные глаголы', g:'the Passive во всех формах + пассив с say / know / believe'},
-  {n:'9',  label:'Unit 9',  t:'Tech talk', m:'Апрель', L:6, v:'технологии и IT, фразовые глаголы о технологиях', g:'relative clauses + герундий и инфинитив (2)'},
-  {n:'10', label:'Unit 10', t:'News just in!', m:'Апрель–Май', L:6, v:'новости, заголовки и коллокации', g:'future in the past, mixed conditionals + question tags, косвенные вопросы'},
+  {n:'1',  label:'Unit 1',  t:'Make the grade', m:'Сентябрь–Октябрь', L:6, v:'школьная и студенческая жизнь, высшее образование, do и make', g:'настоящие времена (включая Present Perfect Continuous) + герундий и инфинитив (1)'},
+  {n:'2',  label:'Unit 2',  t:'A job well done', m:'Октябрь', L:6, v:'условия работы, рабочая жизнь и оплата, фразовые глаголы о работе', g:'прошедшие времена, used to / would + Past Perfect Simple и Continuous'},
+  {n:'3',  label:'Unit 3',  t:'Departure time', m:'Октябрь–Ноябрь', L:6, v:'транспорт и путешествия, приставки', g:'future forms + Future Continuous, Future Perfect'},
+  {n:'4',  label:'Unit 4',  t:'Our strengths', m:'Ноябрь–Декабрь', L:6, v:'прилагательные характера, идиомы о личности, суффиксы существительных', g:'все способы сравнения + артикли, способность (can / could / be able to)'},
+  {n:'5',  label:'Unit 5',  t:'Financial advice', m:'Декабрь', L:6, v:'деньги: траты и накопления, идиомы, фразовые глаголы', g:'модальные: обязательство и совет + speculation и deduction (must have done)'},
+  {n:'H',  label:'Полугодие', t:'Резерв и полугодовой тест по юнитам 1–5', m:'Январь', L:2, v:'ключевая лексика юнитов 1–5', g:'грамматика юнитов 1–5: времена, future forms, сравнения, модальные'},
+  {n:'6',  label:'Unit 6',  t:'Get fit, stay fit!', m:'Январь–Февраль', L:7, v:'тело, здоровье и медицина, идиомы о здоровье', g:'условные Zero / First / Second + Third Conditional, I wish / If only'},
+  {n:'7',  label:'Unit 7',  t:'Rave reviews', m:'Февраль–Март', L:7, v:'кино, литература и музыка, прилагательные для рецензий, составные существительные', g:'reported speech + другие глаголы передачи речи'},
+  {n:'8',  label:'Unit 8',  t:'To the rescue!', m:'Март–Апрель', L:7, v:'природные катастрофы и экстремальная погода, предложные глаголы', g:'the Passive во всех формах + пассив с say / know / believe'},
+  {n:'9',  label:'Unit 9',  t:'Tech talk', m:'Апрель', L:7, v:'технологии и IT, фразовые глаголы о технологиях', g:'relative clauses + герундий и инфинитив (2)'},
+  {n:'10', label:'Unit 10', t:'News just in!', m:'Апрель–Май', L:7, v:'новости, заголовки и коллокации', g:'future in the past, mixed conditionals + question tags, косвенные вопросы'},
   {n:'F',  label:'Финал',   t:'Резерв и годовой тест B2 End of Year Test', m:'Май', L:2, v:'ключевая лексика года', g:'весь грамматический объём года'},
 ];
 
